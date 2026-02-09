@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Police Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body class="dark login-page">
+  <div class="login-box">
+    <h1>Police Dashboard</h1>
+    <p class="muted">Sign in to view chain-snatching data</p>
+    <input id="username" placeholder="Username" />
+    <input id="password" placeholder="Password" type="password" />
+    <button id="loginBtn">Login</button>
+    <p class="hint">Use <strong>admin / password123</strong> for demo</p>
+  </div>
+
+  <script>
+    async function doLogin(){
+      const u=document.getElementById('username').value;
+      const p=document.getElementById('password').value;
+      const res=await fetch('/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:u,password:p})});
+      if(res.ok){const j=await res.json();localStorage.setItem('token',j.access_token);location.href='/templates/index.html'}else{alert('Login failed')}
+    }
+    document.getElementById('loginBtn').addEventListener('click',doLogin);
+    document.addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
+  </script>
+</body>
+</html>

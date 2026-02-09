@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Police Dashboard — Chain Snatching</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body class="dark">
+  <header class="header">
+    <h1>Police Dashboard — Chain Snatching</h1>
+    <div class="auth">
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <label>Area: <input id="filterArea" placeholder="Area name" /></label>
+      <label>Start date: <input id="startDate" type="date" /></label>
+      <label>End date: <input id="endDate" type="date" /></label>
+      <button id="loadBtn">Load Data</button>
+    </section>
+
+    <section class="layout">
+      <div class="panel">
+        <h2>Area-wise Counts</h2>
+        <table id="dataTable" class="styled-table">
+          <thead><tr><th>Area</th><th>Count</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <h2>Map View</h2>
+        <div id="map" style="height:320px;border-radius:8px;overflow:hidden"></div>
+      </div>
+    </section>
+
+    <section class="chart panel">
+      <h2>Top 5 Areas</h2>
+      <canvas id="barChart" height="120"></canvas>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

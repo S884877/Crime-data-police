@@ -1,0 +1,9 @@
+fir_id,date,time,area,crime_type,details
+1,2026-01-10,09:30,Downtown,Chain Snatching,Victim riding motorcycle
+2,2026-01-11,18:45,Northside,Chain Snatching,Two suspects on bike
+3,2026-01-12,20:10,Eastend,Pickpocketing,Market area
+4,2026-02-01,14:00,Downtown,Chain Snatching,Shopper attacked
+5,2026-02-03,21:30,Westpark,Chain Snatching,Evening crowd
+6,2026-02-05,19:00,Northside,Robbery,Corner store
+7,2026-02-07,08:15,Eastend,Chain Snatching,Near bus stop
+8,2026-02-09,12:00,Downtown,Burglary,Residential
